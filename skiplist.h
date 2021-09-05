@@ -109,7 +109,7 @@ bool SkipList<K, V>::insertElem(K key, V value){
         current->setValue(value);
         return true;
     } 
-    if(current == nullptr && current->getKey() != key){
+    if(current == nullptr || current->getKey() != key){
         int lvl = randomLevel();
         if(lvl > level_){
             for(int i = level_ + 1; i < lvl + 1;++i ){
